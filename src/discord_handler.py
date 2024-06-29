@@ -24,7 +24,7 @@ class DiscordClient(discord.Client):
         while True:
             rsi = self._data_fetcher.get_actual_rsi()
             if rsi > 70.0 or rsi < 30.0:
-                await self._channel.send(rsi)
+                await self._channel.send(f'Current RSI value: {rsi}')
             await asyncio.sleep(self._frequency)
 
     @property
